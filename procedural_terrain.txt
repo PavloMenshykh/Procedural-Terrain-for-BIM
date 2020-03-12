@@ -1,0 +1,525 @@
+DIM permutation[]
+
+IF NOT(rndpermutations) THEN
+	!Hash lookup table as defined by Ken Perlin
+	!This is a randomly arranged array of all numbers from 0-255 inclusive
+	permutation[1] = 151 
+	permutation[2] = 160
+	permutation[3] = 137
+	permutation[4] = 91
+	permutation[5] = 90
+	permutation[6] = 15
+	permutation[7] = 131
+	permutation[8] = 13
+	permutation[9] = 201
+	permutation[10] = 95
+	permutation[11] = 96
+	permutation[12] = 53
+	permutation[13] = 194
+	permutation[14] = 233
+	permutation[15] = 7
+	permutation[16] = 225
+	permutation[17] = 140
+	permutation[18] = 36
+	permutation[19] = 103
+	permutation[20] = 30
+	permutation[21] = 69
+	permutation[22] = 142
+	permutation[23] = 8
+	permutation[24] = 99
+	permutation[25] = 37
+	permutation[26] = 240
+	permutation[27] = 21
+	permutation[28] = 10
+	permutation[29] = 23
+	permutation[30] = 190
+	permutation[31] = 6
+	permutation[32] = 148
+	permutation[33] = 247
+	permutation[34] = 120
+	permutation[35] = 234
+	permutation[36] = 75
+	permutation[37] = 0
+	permutation[38] = 26
+	permutation[39] = 197
+	permutation[40] = 62
+	permutation[41] = 94
+	permutation[42] = 252
+	permutation[43] = 219
+	permutation[44] = 203
+	permutation[45] = 117
+	permutation[46] = 35
+	permutation[47] = 11
+	permutation[48] = 32
+	permutation[49] = 57
+	permutation[50] = 177
+	permutation[51] = 33
+	permutation[52] = 88
+	permutation[53] = 237
+	permutation[54] = 149
+	permutation[55] = 56
+	permutation[56] = 87
+	permutation[57] = 174
+	permutation[58] = 20
+	permutation[59] = 125
+	permutation[60] = 136
+	permutation[61] = 171
+	permutation[62] = 168
+	permutation[63] = 68
+	permutation[64] = 175
+	permutation[65] = 74
+	permutation[66] = 165
+	permutation[67] = 71
+	permutation[68] = 134
+	permutation[69] = 139
+	permutation[70] = 48
+	permutation[71] = 27
+	permutation[72] = 166
+	permutation[73] = 77
+	permutation[74] = 146
+	permutation[75] = 158
+	permutation[76] = 231
+	permutation[77] = 83
+	permutation[78] = 111
+	permutation[79] = 229
+	permutation[80] = 122
+	permutation[81] = 60
+	permutation[82] = 211
+	permutation[83] = 133
+	permutation[84] = 230
+	permutation[85] = 220
+	permutation[86] = 105
+	permutation[87] = 92
+	permutation[88] = 41
+	permutation[89] = 55
+	permutation[90] = 46
+	permutation[91] = 245
+	permutation[92] = 40
+	permutation[93] = 244
+	permutation[94] = 102
+	permutation[95] = 143
+	permutation[96] = 54
+	permutation[97] = 65
+	permutation[98] = 25
+	permutation[99] = 63
+	permutation[100] = 161
+	permutation[101] = 1
+	permutation[102] = 216
+	permutation[103] = 80
+	permutation[104] = 73
+	permutation[105] = 209
+	permutation[106] = 76
+	permutation[107] = 132
+	permutation[108] = 187
+	permutation[109] = 208
+	permutation[110] = 89
+	permutation[111] = 18
+	permutation[112] = 169
+	permutation[113] = 200
+	permutation[114] = 196
+	permutation[115] = 135
+	permutation[116] = 130
+	permutation[117] = 116
+	permutation[118] = 188
+	permutation[119] = 159
+	permutation[120] = 86
+	permutation[121] = 164
+	permutation[122] = 100
+	permutation[123] = 109
+	permutation[124] = 198
+	permutation[125] = 173
+	permutation[126] = 186
+	permutation[127] = 3
+	permutation[128] = 64
+	permutation[129] = 52
+	permutation[130] = 217
+	permutation[131] = 226
+	permutation[132] = 250
+	permutation[133] = 124
+	permutation[134] = 123
+	permutation[135] = 5
+	permutation[136] = 202
+	permutation[137] = 38
+	permutation[138] = 147
+	permutation[139] = 118
+	permutation[140] = 126
+	permutation[141] = 255
+	permutation[142] = 82
+	permutation[143] = 85
+	permutation[144] = 212
+	permutation[145] = 207
+	permutation[146] = 206
+	permutation[147] = 59
+	permutation[148] = 227
+	permutation[149] = 47
+	permutation[150] = 16
+	permutation[151] = 58
+	permutation[152] = 17
+	permutation[153] = 182
+	permutation[154] = 189
+	permutation[155] = 28
+	permutation[156] = 42
+	permutation[157] = 223
+	permutation[158] = 183
+	permutation[159] = 170
+	permutation[160] = 213
+	permutation[161] = 119
+	permutation[162] = 248
+	permutation[163] = 152
+	permutation[164] = 2
+	permutation[165] = 44
+	permutation[166] = 154
+	permutation[167] = 163
+	permutation[168] = 70
+	permutation[169] = 221
+	permutation[170] = 153
+	permutation[171] = 101
+	permutation[172] = 155
+	permutation[173] = 167
+	permutation[174] = 43
+	permutation[175] = 172
+	permutation[176] = 9
+	permutation[177] = 129
+	permutation[178] = 22
+	permutation[179] = 39
+	permutation[180] = 253
+	permutation[181] = 19
+	permutation[182] = 98
+	permutation[183] = 108
+	permutation[184] = 110
+	permutation[185] = 79
+	permutation[186] = 113
+	permutation[187] = 224
+	permutation[188] = 232
+	permutation[189] = 178
+	permutation[190] = 185
+	permutation[191] = 112
+	permutation[192] = 104
+	permutation[193] = 218
+	permutation[194] = 246
+	permutation[195] = 97
+	permutation[196] = 228
+	permutation[197] = 251
+	permutation[198] = 34
+	permutation[199] = 242
+	permutation[200] = 193
+	permutation[201] = 238
+	permutation[202] = 210
+	permutation[203] = 144
+	permutation[204] = 12
+	permutation[205] = 191
+	permutation[206] = 179
+	permutation[207] = 162
+	permutation[208] = 241
+	permutation[209] = 81
+	permutation[210] = 51
+	permutation[211] = 145
+	permutation[212] = 235
+	permutation[213] = 249
+	permutation[214] = 14
+	permutation[215] = 239
+	permutation[216] = 107
+	permutation[217] = 49
+	permutation[218] = 192
+	permutation[219] = 214
+	permutation[220] = 31
+	permutation[221] = 181
+	permutation[222] = 199
+	permutation[223] = 106
+	permutation[224] = 157
+	permutation[225] = 184
+	permutation[226] = 84
+	permutation[227] = 204
+	permutation[228] = 176
+	permutation[229] = 115
+	permutation[230] = 121
+	permutation[231] = 50
+	permutation[232] = 45
+	permutation[233] = 127
+	permutation[234] = 4
+	permutation[235] = 150
+	permutation[236] = 254
+	permutation[237] = 138
+	permutation[238] = 236
+	permutation[239] = 205
+	permutation[240] = 93
+	permutation[241] = 222
+	permutation[242] = 114
+	permutation[243] = 67
+	permutation[244] = 29
+	permutation[245] = 24
+	permutation[246] = 72
+	permutation[247] = 243
+	permutation[248] = 141
+	permutation[249] = 128
+	permutation[250] = 195
+	permutation[251] = 78
+	permutation[252] = 66
+	permutation[253] = 215
+	permutation[254] = 61
+	permutation[255] = 156
+	permutation[256] = 180
+ELSE
+	!!!Perform a Fisher–Yates shuffle 
+	!!!==============================
+	FOR dummyfill=1 TO 256
+		permutation[dummyfill] = dummyfill
+	NEXT dummyfill
+
+	FOR shuffler=256 TO 1 STEP -1
+		j = 1+INT(RND(shuffler-1))
+		swapVal = permutation[shuffler]
+		permutation[shuffler] = permutation[j]
+		permutation[j] = swapVal
+	NEXT shuffler
+ENDIF
+
+
+!double permutation to avoid overflow
+DIM p[]
+FOR i=1 TO 256
+	p[i] = permutation[i]
+	p[256+i] = permutation[i]	
+NEXT i
+
+nsquaresA = CEIL(A/density)
+nsquaresB = CEIL(B/density)
+
+DIM zvals[], hotspotH[]
+
+FOR i=1 to INT((nsquaresA + 1)*(nsquaresB + 1))
+	zvals[i] = 0
+NEXT i
+
+FOR octave=1 TO maxoctaves
+	FOR yy=1 TO nsquaresB+1
+		FOR xx=1 to nsquaresA+1
+			PUT ((xx+xoffset)/(frequency/(2*octave))), ((yy+yoffset)/(frequency/(2*octave)))
+			GOSUB "perlin_noise"
+			heightval = GET(1)
+			indx = ((yy-1)*(nsquaresA+1))+xx 
+			zvals[indx] = zvals[indx]+(heightval*(amplitude/(2*octave)))
+
+			!Add corner heights for hotspots
+			IF octave = maxoctaves THEN
+				IF (yy=1 OR yy=nsquaresB+1) AND (xx=1 or xx=nsquaresA+1) THEN
+					hotspotH[VARDIM1(hotspotH)+1] = zvals[indx]
+				ENDIF
+			ENDIF
+		NEXT xx
+	NEXT yy
+NEXT octave
+
+FOR fillbuffer=1 to VARDIM1(zvals)
+	PUT zvals[fillbuffer]
+NEXT fillbuffer
+
+offsetval = ABS(MIN(USE(NSP)))
+totalheight = MAX(USE(NSP))+offsetval
+
+FOR fillbuffer=1 to VARDIM1(zvals)
+	PUT offsetval+ZZYZX+GET(1)
+NEXT fillbuffer
+
+!!!Create hotspots for every logical corner 
+HOTSPOT 0, 0, hotspotH[1]+offsetval+ZZYZX
+HOTSPOT A, 0, hotspotH[2]+offsetval+ZZYZX
+HOTSPOT 0, B, hotspotH[3]+offsetval+ZZYZX
+HOTSPOT A, B, hotspotH[4]+offsetval+ZZYZX
+HOTSPOT 0, 0, 0
+HOTSPOT A, 0, 0
+HOTSPOT 0, B, 0
+HOTSPOT A, B, 0
+
+meshmask = 0
+IF NOT(toslice) THEN meshmask = 32+64
+
+GROUP "terrain"
+	MESH A, B, nsquaresA+1, nsquaresB+1,  1+4+16+meshmask,
+		GET(NSP)
+ENDGROUP
+
+IF toslice THEN
+	!!!Generate contour lines
+	slicecnt = INT(totalheight/sliceinterval)
+	firstslice = ZZYZX+sliceinterval
+	
+	GROUP "contour_operators"
+		IF slicecnt THEN
+			ADDZ firstslice
+			FOR slc=1 TO slicecnt STEP 2
+				BLOCK A, B, sliceinterval
+				ADDZ sliceinterval*2
+			NEXT slc 
+			DEL TOP
+		ENDIF
+	ENDGROUP
+
+	contour_lines = ISECTLINES("terrain", "contour_operators")
+	PLACEGROUP contour_lines
+ENDIF
+
+PLACEGROUP "terrain"
+
+end
+
+!!!Functions
+!!!=========
+
+"bitand":
+	!get values from buffer
+	value1 = GET(1)
+	value2 = GET(1)
+
+	!!!Get the larger bit length for value2ing, logn(x) = log(x) / log(n)
+	bitlen = CEIL(LOG(MAX((value1+1),(value2+1)))/LOG(2))    
+	
+	!!!Find the bit value for every position compare and modify
+	FOR bit=0 TO bitlen-1
+		IF NOT(BITTEST(value1, bit) & BITTEST(value2, bit)) THEN
+			value1 = BITSET (value1, bit, 0)
+		ENDIF		
+	NEXT bit
+
+	!put result into buffer
+	PUT value1
+return
+
+
+"fade":
+	!get values from buffer
+	value3 = GET(1)
+	fade_result = value3 ** 3 * (value3 * (value3 * 6 - 15) + 10)
+	
+	!put result into buffer
+	PUT fade_result 
+return	
+
+
+"lerp":
+	!get values from buffer
+	value4 = GET(1)
+	value5 = GET(1)
+	value6 = GET(1)
+
+	lerp_result = value5 + (value4 * (value6 - value5))
+	
+	!put result into buffer
+	PUT lerp_result 
+return
+
+
+"grad":
+	!get values from buffer
+	value7 = GET(1)
+	value8 = GET(1)
+	value9 = GET(1)
+
+	PUT value7, 15	
+	GOSUB "bitand"
+	hh = GET(1)
+
+	if hh<8 then
+		uu = value8
+	else
+		uu = value9
+	endif
+
+	if hh<4 then
+		vv = value9
+	else
+		if hh = 12 or hh = 14 then
+			vv = value8 
+		else
+			vv = 0
+		endif
+	endif
+
+	PUT hh, 1
+	GOSUB "bitand"
+	hh2 = GET(1)
+
+	PUT hh, 2
+	GOSUB "bitand"
+	hh3 = GET(1)
+	
+	if  NOT(hh2) then
+		grad_result = uu
+	else 
+		grad_result = -uu
+	endif
+
+	if NOT(hh3) then
+		grad_result	= grad_result + vv	
+	else
+		grad_result = grad_result - vv		
+	endif
+
+	!put result into buffer
+	PUT grad_result 
+return
+
+"perlin_noise":
+	!get values from buffer
+	valueX = GET(1)
+	valueY = GET(1)
+
+	!Get the points grid location
+	PUT INT(valueX), 255
+	GOSUB "bitand"
+	perlin_X = GET(1)
+
+	PUT INT(valueY), 255
+	GOSUB "bitand"
+	perlin_Y = GET(1)
+	
+	!Get the location of the point 
+	valueX = valueX - INT(valueX)
+	valueY = valueY - INT(valueY)
+
+	!Get the fade function. Fade function makes it so you don't go from 0 to 1
+    !In a linear fashion, but rather in a way that is more varied.
+	PUT valueX
+	GOSUB "fade"
+	valueU = GET(1)
+
+	PUT valueY
+	GOSUB "fade"
+	valueV = GET(1)
+	
+	cA 	= p[(perlin_X+1)] + perlin_Y
+	cB	= p[(perlin_X+2)] + perlin_Y
+
+	!Do all grad calcs
+	PUT p[cA+1], valueX, valueY
+	GOSUB "grad"
+	grad_1 = GET(1)
+
+	PUT p[cB+1], (valueX-1), valueY
+	GOSUB "grad"
+	grad_2 = GET(1)
+
+	PUT p[cA+2], valueX, (valueY-1)
+	GOSUB "grad"
+	grad_3 = GET(1)
+
+	PUT p[cB+2], (valueX-1), (valueY-1)
+	GOSUB "grad"
+	grad_4 = GET(1)
+
+	!Do lerp calcs
+	PUT valueU, grad_1, grad_2
+	GOSUB "lerp"
+	lerp_1 = GET(1)
+
+	PUT valueU, grad_3, grad_4
+	GOSUB "lerp"
+	lerp_2 = GET(1)
+
+	PUT valueV, lerp_1, lerp_2
+	GOSUB "lerp"
+	perlin_result = GET(1)
+
+	!put result into buffer
+	PUT perlin_result 
+return
