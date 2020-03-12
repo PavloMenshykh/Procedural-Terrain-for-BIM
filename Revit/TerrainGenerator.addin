@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>TerrainGenerator</Name>
+    <Assembly>TerrainGenerator.dll</Assembly>
+    <AddInId>5B2C487B-2DE5-4E10-B49E-06F93695DE0B</AddInId>
+    <FullClassName>TerrainGenerator.TerrainPanel</FullClassName>
+    <VendorId>Pavlo</VendorId>
+    <VendorDescription>Pavlo</VendorDescription>
+  </AddIn>
+</RevitAddIns>
